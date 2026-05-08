@@ -1,0 +1,212 @@
+/* Star Ledger Asset Brightness Base v2.1.2
+   Immediate safe boost for asset readability on dark UI.
+   Generated asset-specific overrides are produced by tools/auditAssetBrightness.mjs.
+*/
+
+:root {
+  --sl-bg-asset-brightness: 1.10;
+  --sl-bg-asset-contrast: 1.06;
+  --sl-card-asset-brightness: 1.16;
+  --sl-card-asset-contrast: 1.08;
+  --sl-artifact-asset-brightness: 1.20;
+  --sl-artifact-asset-contrast: 1.12;
+}
+
+img[src*="/artifacts/"],
+img[src*="artifacts/"],
+.artifact-image,
+.sl-artifact-image {
+  filter: brightness(var(--sl-artifact-asset-brightness)) contrast(var(--sl-artifact-asset-contrast)) saturate(1.10);
+}
+
+img[src*="/avatars/"],
+img[src*="/npcs/"],
+img[src*="/crew/"],
+.portrait-image,
+.sl-portrait-image {
+  filter: brightness(1.18) contrast(1.08) saturate(1.06);
+}
+
+img[src*="/ships/"],
+.ship-image,
+.sl-ship-image {
+  filter: brightness(1.16) contrast(1.08) saturate(1.05);
+}
+
+.title-screen-bg,
+.screen-background,
+.destination-background,
+.travel-background,
+[class*="background"] img {
+  filter: brightness(var(--sl-bg-asset-brightness)) contrast(var(--sl-bg-asset-contrast)) saturate(1.04);
+}
+
+.encounter-card img,
+.sl-encounter-card img,
+.dialog-visual img,
+.comms-visual img {
+  filter: brightness(var(--sl-card-asset-brightness)) contrast(var(--sl-card-asset-contrast)) saturate(1.05);
+}
+
+/* ============================================================
+   STAR LEDGER FORCED BRIGHTNESS OVERWRITE v2.1.6
+   Appended directly into loaded stylesheets so no wiring/import
+   is needed after upload.
+   ============================================================ */
+
+:root {
+  --sl-forced-bg-brightness: 1.42;
+  --sl-forced-img-brightness: 1.32;
+  --sl-forced-contrast: 1.10;
+  --sl-forced-saturation: 1.08;
+  --sl-screen-lift-opacity: 0.18;
+}
+
+html::before,
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(120, 210, 255, 0.16), transparent 42%),
+    linear-gradient(rgba(255,255,255,var(--sl-screen-lift-opacity)), rgba(255,255,255,var(--sl-screen-lift-opacity)));
+  mix-blend-mode: screen;
+}
+
+img,
+picture,
+video,
+canvas,
+svg image,
+[style*="background-image"],
+[class*="background"],
+[class*="Background"],
+[class*="bg-"],
+[class*="Bg"],
+[class*="visual"],
+[class*="Visual"],
+[class*="portrait"],
+[class*="Portrait"],
+[class*="asset"],
+[class*="Asset"],
+[class*="art"],
+[class*="Art"],
+[class*="ship"],
+[class*="Ship"],
+[class*="destination"],
+[class*="Destination"],
+[class*="travel"],
+[class*="Travel"],
+[class*="encounter"],
+[class*="Encounter"],
+.title-screen,
+.game-title,
+.main-menu,
+.travel-screen,
+.destination-screen,
+.encounter-screen,
+.scene-screen,
+.comms-screen,
+.screen,
+.scene,
+.panel-visual,
+.visual-panel {
+  filter:
+    brightness(var(--sl-forced-img-brightness))
+    contrast(var(--sl-forced-contrast))
+    saturate(var(--sl-forced-saturation)) !important;
+}
+
+.title-screen,
+.game-title,
+.main-menu,
+.travel-screen,
+.destination-screen,
+.encounter-screen,
+.scene-screen,
+.comms-screen,
+.screen,
+.scene,
+[class*="background"],
+[class*="Background"],
+[style*="background-image"] {
+  filter:
+    brightness(var(--sl-forced-bg-brightness))
+    contrast(var(--sl-forced-contrast))
+    saturate(var(--sl-forced-saturation)) !important;
+}
+
+.title-screen::before,
+.title-screen::after,
+.game-title::before,
+.game-title::after,
+.main-menu::before,
+.main-menu::after,
+.travel-screen::before,
+.travel-screen::after,
+.destination-screen::before,
+.destination-screen::after,
+.encounter-screen::before,
+.encounter-screen::after,
+.scene-screen::before,
+.scene-screen::after,
+.comms-screen::before,
+.comms-screen::after,
+.screen::before,
+.screen::after,
+.scene::before,
+.scene::after {
+  filter:
+    brightness(var(--sl-forced-bg-brightness))
+    contrast(var(--sl-forced-contrast))
+    saturate(var(--sl-forced-saturation)) !important;
+}
+
+.overlay,
+.vignette,
+.dark-overlay,
+.scanlines,
+.crt-overlay,
+.noise-overlay,
+[class*="vignette"],
+[class*="Vignette"],
+[class*="darken"],
+[class*="Darken"],
+[class*="shadow-overlay"],
+[class*="ShadowOverlay"] {
+  opacity: 0.42 !important;
+}
+
+button,
+input,
+select,
+textarea,
+.panel,
+.console,
+.console-panel,
+.dialog-panel,
+.comms-panel,
+.encounter-panel,
+.hud,
+.hud-panel,
+.ui-panel,
+[class*="text"],
+[class*="Text"] {
+  filter: none !important;
+}
+
+.panel img,
+.console img,
+.console-panel img,
+.dialog-panel img,
+.comms-panel img,
+.encounter-panel img,
+.hud img,
+.ui-panel img {
+  filter:
+    brightness(1.34)
+    contrast(1.10)
+    saturate(1.08) !important;
+}

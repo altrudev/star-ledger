@@ -1,0 +1,280 @@
+.sl-travel-panel,
+.sl-encounter-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(108, 230, 255, 0.28);
+  background: radial-gradient(circle at center, rgba(18, 42, 68, 0.7), rgba(2, 4, 10, 0.96));
+  color: #e8fbff;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(40, 190, 255, 0.16);
+  padding: 22px;
+}
+
+.sl-travel-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(70, 210, 255, 0.26), transparent 22%),
+    radial-gradient(circle at 75% 55%, rgba(160, 90, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(4, 9, 20, 0.2), rgba(0, 0, 0, 0.85));
+  animation: sl-drift 18s linear infinite;
+}
+
+.sl-travel-hud,
+.sl-encounter-header,
+.sl-encounter-text,
+.sl-encounter-options,
+.sl-encounter-card blockquote {
+  position: relative;
+  z-index: 1;
+}
+
+.sl-kicker {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #7fe9ff;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.sl-travel-panel h2,
+.sl-encounter-card h2 {
+  margin: 6px 0 14px;
+  font-size: 24px;
+}
+
+.sl-progress {
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+.sl-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #55dfff, #d4f7ff);
+  box-shadow: 0 0 18px rgba(85, 223, 255, 0.65);
+}
+
+.sl-risk {
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.sl-risk-critical { color: #ff5c9e; }
+.sl-risk-unstable { color: #ffd36a; }
+.sl-risk-manageable { color: #88ffda; }
+
+.sl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sl-tags span {
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid rgba(127, 233, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(127, 233, 255, 0.08);
+}
+
+.sl-encounter-card blockquote {
+  border-left: 3px solid rgba(127, 233, 255, 0.55);
+  margin: 16px 0;
+  padding: 10px 14px;
+  background: rgba(127, 233, 255, 0.06);
+  color: #dff9ff;
+}
+
+.sl-encounter-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sl-encounter-options button {
+  border: 1px solid rgba(127, 233, 255, 0.35);
+  background: rgba(8, 22, 36, 0.86);
+  color: #e8fbff;
+  border-radius: 12px;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.sl-encounter-options button:hover {
+  background: rgba(37, 91, 118, 0.9);
+}
+
+@keyframes sl-drift {
+  from { transform: translate3d(-1%, -1%, 0) scale(1.02); }
+  to { transform: translate3d(1%, 1%, 0) scale(1.06); }
+}
+
+/* ============================================================
+   STAR LEDGER FORCED BRIGHTNESS OVERWRITE v2.1.6
+   Appended directly into loaded stylesheets so no wiring/import
+   is needed after upload.
+   ============================================================ */
+
+:root {
+  --sl-forced-bg-brightness: 1.42;
+  --sl-forced-img-brightness: 1.32;
+  --sl-forced-contrast: 1.10;
+  --sl-forced-saturation: 1.08;
+  --sl-screen-lift-opacity: 0.18;
+}
+
+html::before,
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(120, 210, 255, 0.16), transparent 42%),
+    linear-gradient(rgba(255,255,255,var(--sl-screen-lift-opacity)), rgba(255,255,255,var(--sl-screen-lift-opacity)));
+  mix-blend-mode: screen;
+}
+
+img,
+picture,
+video,
+canvas,
+svg image,
+[style*="background-image"],
+[class*="background"],
+[class*="Background"],
+[class*="bg-"],
+[class*="Bg"],
+[class*="visual"],
+[class*="Visual"],
+[class*="portrait"],
+[class*="Portrait"],
+[class*="asset"],
+[class*="Asset"],
+[class*="art"],
+[class*="Art"],
+[class*="ship"],
+[class*="Ship"],
+[class*="destination"],
+[class*="Destination"],
+[class*="travel"],
+[class*="Travel"],
+[class*="encounter"],
+[class*="Encounter"],
+.title-screen,
+.game-title,
+.main-menu,
+.travel-screen,
+.destination-screen,
+.encounter-screen,
+.scene-screen,
+.comms-screen,
+.screen,
+.scene,
+.panel-visual,
+.visual-panel {
+  filter:
+    brightness(var(--sl-forced-img-brightness))
+    contrast(var(--sl-forced-contrast))
+    saturate(var(--sl-forced-saturation)) !important;
+}
+
+.title-screen,
+.game-title,
+.main-menu,
+.travel-screen,
+.destination-screen,
+.encounter-screen,
+.scene-screen,
+.comms-screen,
+.screen,
+.scene,
+[class*="background"],
+[class*="Background"],
+[style*="background-image"] {
+  filter:
+    brightness(var(--sl-forced-bg-brightness))
+    contrast(var(--sl-forced-contrast))
+    saturate(var(--sl-forced-saturation)) !important;
+}
+
+.title-screen::before,
+.title-screen::after,
+.game-title::before,
+.game-title::after,
+.main-menu::before,
+.main-menu::after,
+.travel-screen::before,
+.travel-screen::after,
+.destination-screen::before,
+.destination-screen::after,
+.encounter-screen::before,
+.encounter-screen::after,
+.scene-screen::before,
+.scene-screen::after,
+.comms-screen::before,
+.comms-screen::after,
+.screen::before,
+.screen::after,
+.scene::before,
+.scene::after {
+  filter:
+    brightness(var(--sl-forced-bg-brightness))
+    contrast(var(--sl-forced-contrast))
+    saturate(var(--sl-forced-saturation)) !important;
+}
+
+.overlay,
+.vignette,
+.dark-overlay,
+.scanlines,
+.crt-overlay,
+.noise-overlay,
+[class*="vignette"],
+[class*="Vignette"],
+[class*="darken"],
+[class*="Darken"],
+[class*="shadow-overlay"],
+[class*="ShadowOverlay"] {
+  opacity: 0.42 !important;
+}
+
+button,
+input,
+select,
+textarea,
+.panel,
+.console,
+.console-panel,
+.dialog-panel,
+.comms-panel,
+.encounter-panel,
+.hud,
+.hud-panel,
+.ui-panel,
+[class*="text"],
+[class*="Text"] {
+  filter: none !important;
+}
+
+.panel img,
+.console img,
+.console-panel img,
+.dialog-panel img,
+.comms-panel img,
+.encounter-panel img,
+.hud img,
+.ui-panel img {
+  filter:
+    brightness(1.34)
+    contrast(1.10)
+    saturate(1.08) !important;
+}
