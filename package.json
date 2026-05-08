@@ -1,0 +1,10 @@
+{
+  "name": "star-ledger-integrated-codebase-no-assets",
+  "version": "2.1.3",
+  "private": true,
+  "type": "module",
+  "description": "Integrated Star Ledger codebase with fixes and systems merged; assets excluded.",
+  "scripts": {
+    "audit:assets": "node tools/auditAssetBrightness.mjs ./assets"
+  }
+}

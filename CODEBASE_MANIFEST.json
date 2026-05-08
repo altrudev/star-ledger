@@ -1,0 +1,19 @@
+{
+  "project": "Star Ledger",
+  "package": "integrated_codebase_no_assets",
+  "version": "v2.1.6",
+  "assets_included": false,
+  "brightness_fix": {
+    "mode": "overwrite_integrated",
+    "css_appended_to_all_src_styles": true,
+    "global_screen_lift": "18%",
+    "image_brightness": "32%",
+    "background_brightness": "42%",
+    "overlay_opacity_reduced_to": "42%"
+  },
+  "notes": [
+    "Upload/overwrite this package over the hosted codebase.",
+    "No separate brightness wiring/import is required when existing CSS files are overwritten.",
+    "Assets are intentionally excluded."
+  ]
+}
